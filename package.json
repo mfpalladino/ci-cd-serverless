@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "integration-test": "./node_modules/.bin/mocha tests/tests_cases --reporter spec"
+    "integration-test": "env TEST_MODE=handler ./node_modules/.bin/mocha tests/tests_cases --reporter spec",
+    "acceptance-test": "env TEST_MODE=http TEST_ROOT=https://ml742am7k4.execute-api.us-east-1.amazonaws.com/dev ./node_modules/.bin/mocha tests/tests_cases --reporter spec"
   },
   "author": "",
   "license": "ISC",

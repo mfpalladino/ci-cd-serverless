@@ -6,6 +6,8 @@ const init = require('../steps/init').init;
 const when = require('../steps/when');
 const cheerio = require('cheerio');
 
+const mode = process.env.TEST_MODE;
+
 describe(`When we invoke the GET / endpoint`, co.wrap(function* () {
   before(co.wrap(function* () {
     yield init();
@@ -15,9 +17,8 @@ describe(`When we invoke the GET / endpoint`, co.wrap(function* () {
     let res = yield when.we_invoke_get_index();
 
     expect(res.statusCode).to.equal(200);
-    expect(res.headers['Content-Type']).to.equal('text/html; charset=UTF-8');
+    expect(res.headers[mode === 'handler' ? 'Content-Type' : 'content-type']).to.equal('text/html; charset=UTF-8');
     expect(res.body).to.not.be.null;
-
 
     const $ = cheerio.load(res.body);
     let programmers = $('.programmer');  
