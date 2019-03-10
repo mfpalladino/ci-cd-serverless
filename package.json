@@ -1,0 +1,24 @@
+{
+  "name": "greatestfemaleprogrammers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "integration-test": "./node_modules/.bin/mocha tests/tests_cases --reporter spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "co": "^4.6.0",
+    "mustache": "^3.0.1",
+    "superagent": "^4.1.0",
+    "superagent-promise": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.11",
+    "mocha": "^6.0.2"
+  }
+}

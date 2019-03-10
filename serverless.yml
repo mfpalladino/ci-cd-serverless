@@ -1,0 +1,22 @@
+service: GreatestFemaleProgrammers
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  deploymentBucket: demos.serverless.deploys
+functions:
+  get-index:
+    handler: functions/get-index.handler
+    events:
+      - http:
+          path: /
+          method: get
+    environment:
+      femaleprogrammers_api: https://ml742am7k4.execute-api.us-east-1.amazonaws.com/dev/femaleprogrammers
+  get-greatest-female-programmers:
+    handler: functions/get-female-programmers.handler
+    events:
+      - http:
+          path: /femaleprogrammers/
+          method: get

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Greatest Female Programmers of All Time</title>
+    
+    <style>
+      .fullscreenDiv {
+        background-color: #05bafd;
+        width: 100%;
+        height: auto;
+        bottom: 0px;
+        top: 0px;
+        left: 0;
+        position: absolute;        
+      }
+      .programmersDiv {
+        background-color: #ffffff;
+        width: 100%;
+        height: auto;
+      }
+      .column-container {
+        padding: 0;
+        margin: 0;        
+        list-style: none;
+        display: flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .row-container {
+        padding: 0;
+        margin: 0;        
+        list-style: none;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: center;    
+      }
+      .item {
+        padding: 5px;
+        height: auto;
+        margin-top: 10px;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .programmer {
+        background-color: #f7a800;
+        border-radius: 10px;
+        padding: 5px;
+        height: auto;
+        width: auto;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 15px;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+      }
+      .programmer-name {
+        font-size: 24px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        padding: 10px;
+        margin: 0px;
+      }
+      .programmer-image {
+        padding-top: 0px;
+        margin-top: 0px;
+      }
+      .programmer-description {
+        font-size: 24px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        padding: 10px;
+        margin: 0px;
+      }
+      input {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+      button {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+    </style>
+
+    <script>      
+    </script>
+  </head>
+
+  <body>
+    <div class="fullscreenDiv">
+      <ul class="column-container">
+        <li>
+          <div class="programmersDiv column-container">
+            <ul class="row-container">
+              {{#programmers}}
+              <li class="programmer">
+                <ul class="column-container">
+                    <li class="item programmer-name">{{name}}</li>
+                    <li class="item programmer-image">
+                      <img src="{{image}}">
+                    </li>
+                    <li class="item programmer-description">{{description}}</li>
+                </ul>
+              </li>
+              {{/programmers}}
+            </ul> 
+          </div>         
+        </li>
+      </ul>
+  </div>
+  </body>
+
+</html>
