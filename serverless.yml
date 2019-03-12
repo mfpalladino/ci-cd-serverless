@@ -1,4 +1,4 @@
-service: GreatestFemaleProgrammers
+service: GreatestFemaleProgrammersV2
 provider:
   name: aws
   runtime: nodejs8.10
