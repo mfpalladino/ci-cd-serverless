@@ -4,7 +4,6 @@ provider:
   runtime: nodejs8.10
   stage: dev
   region: us-east-1
-  deploymentBucket: demos.serverless.deploys
 functions:
   get-index:
     handler: functions/get-index.handler
