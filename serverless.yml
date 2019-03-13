@@ -1,9 +1,19 @@
-service: GreatestFemaleProgrammersV2
+service: GreatestFemaleProgrammersV3
 provider:
   name: aws
   runtime: nodejs8.10
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - codedeploy:*
+      Resource:
+        - "*"
   stage: dev
   region: us-east-1
+
+plugins:
+  - serverless-plugin-canary-deployments  
+
 functions:
   get-index:
     handler: functions/get-index.handler
@@ -13,6 +23,9 @@ functions:
           method: get
     environment:
       femaleprogrammers_api: https://ml742am7k4.execute-api.us-east-1.amazonaws.com/dev/femaleprogrammers
+    deploymentSettings:
+      type: Linear10PercentEvery1Minute
+      alias: Live      
   get-greatest-female-programmers:
     handler: functions/get-female-programmers.handler
     events:
